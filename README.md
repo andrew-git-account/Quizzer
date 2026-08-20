@@ -132,6 +132,39 @@ Quiz results are printed to stdout as JSON:
 }
 ```
 
-## Coming Soon
+## Quiz Creation
 
-- **quiz-agent**: AI agent to generate quiz questions based on user input
+The **quiz-agent** helps convert various formats into quiz files:
+
+### Convert Incompatible JSON
+```bash
+# In Claude Code conversation
+"Convert quiz_data.json to quiz format"
+```
+
+The agent will:
+1. Read and analyze the source file
+2. Ask for missing fields (title, domain) with defaults
+3. Convert to quiz-run compatible format
+4. Validate using quiz-run models
+5. Save to `quizzes/` directory
+
+### Extract from Images
+```bash
+# In Claude Code conversation  
+"Extract quiz from screenshot.png"
+```
+
+The agent will:
+1. Use Claude vision to read quiz questions from images
+2. Extract questions, answers, and correct answer indicators
+3. Ask for confirmation of extracted content
+4. Build and validate quiz JSON
+5. Save for immediate use
+
+### Agent Features
+- Interactive prompts with sensible defaults
+- Validates all output before saving
+- Preserves explanations only if present in source
+- Handles multi-select questions automatically
+- No external dependencies (uses Claude vision)

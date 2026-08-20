@@ -1,0 +1,34 @@
+{
+  "quiz_name": "JavaScript Basics",
+  "category": "Programming",
+  "items": [
+    {
+      "text": "What keyword is used to declare a variable in JavaScript?",
+      "choices": ["var", "let", "const", "all of the above"],
+      "right": "all of the above",
+      "notes": "All three keywords can be used to declare variables, though they have different scopes and behaviors."
+    },
+    {
+      "text": "Which data type is NOT primitive in JavaScript?",
+      "choices": ["string", "number", "object", "boolean"],
+      "right": "object"
+    },
+    {
+      "text": "What will console.log(typeof null) output?",
+      "choices": ["null", "undefined", "object", "error"],
+      "right": "object",
+      "notes": "This is a known quirk in JavaScript - typeof null returns 'object' due to a legacy bug."
+    },
+    {
+      "text": "Select all truthy values in JavaScript:",
+      "choices": ["0", "\"\"", "[]", "null"],
+      "correct_multiple": ["[]"],
+      "notes": "Empty arrays are truthy in JavaScript, while 0, empty strings, and null are falsy."
+    },
+    {
+      "text": "Which methods can add elements to an array?",
+      "choices": ["push()", "pop()", "shift()", "unshift()"],
+      "correct_multiple": ["push()", "unshift()"]
+    }
+  ]
+}

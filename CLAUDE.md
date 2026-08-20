@@ -27,8 +27,8 @@ Quizzer is a Python-based quiz application with two core components:
 - ✓ Inline feedback display (appears directly after selected answer)
 - ✓ Auto-removal of Confirm button after answering
 
-**Not Yet Started:**
-- quiz-agent for generating quiz questions
+**Completed (2026-08-20):**
+- ✓ quiz-agent for converting and extracting quiz questions from various formats
 
 ## Architecture
 
@@ -41,12 +41,13 @@ Quizzer is a Python-based quiz application with two core components:
 - Takes quiz definition as input parameter
 - **Files**: SKILL.md, quiz_runner.py (entry point), quiz_app.py (main app), models.py (data), utils.py (timer), ui/ (pages), test_quiz.py
 
-**quiz-agent** TODO (`/.claude/agents/quiz-agent.md`)
-- Generates quiz questions and answers
-- Formats quiz data structure
-- Accepts user requirements (topic, difficulty, question count)
-- Outputs quiz definitions compatible with quiz-run
-- **Status**: Not yet implemented
+**quiz-agent** ✓ IMPLEMENTED (`/.claude/agents/quiz-agent.md`)
+- Converts incompatible JSON formats to quiz-run format
+- Extracts quiz questions from images/screenshots using Claude vision
+- Interactive prompts for missing fields (title, domain) with defaults
+- Validates output using quiz-run models before saving
+- Preserves explanations only if present in source
+- Saves to `/quizzes/` directory for immediate use with quiz-run
 
 ### Quiz Data Format
 
