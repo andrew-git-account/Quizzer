@@ -102,7 +102,16 @@ class QuestionPage(tk.Frame):
             nav_buttons_frame = tk.Frame(container)
             nav_buttons_frame.pack(fill=tk.X, pady=(0, 15))
 
+            # Create buttons with wrapping (max 20 buttons per row)
+            buttons_per_row = 20
+            current_row_frame = None
+
             for i in range(self.total_questions):
+                # Create a new row frame every buttons_per_row buttons
+                if i % buttons_per_row == 0:
+                    current_row_frame = tk.Frame(nav_buttons_frame)
+                    current_row_frame.pack(fill=tk.X, pady=2)
+
                 # Determine button styling based on state
                 is_current = (i == self.question_num - 1)
                 is_correct = i in self.correctly_answered_questions
@@ -126,7 +135,7 @@ class QuestionPage(tk.Frame):
                     relief = tk.RAISED
 
                 btn = tk.Button(
-                    nav_buttons_frame,
+                    current_row_frame,
                     text=str(i + 1),
                     width=3,
                     bg=bg_color,
