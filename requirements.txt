@@ -1,0 +1,6 @@
+# No external dependencies required for MVP
+# Core libraries used (all built-in):
+# - tkinter (shipped with Python)
+# - json (built-in)
+# - threading (built-in)
+# - dataclasses (Python 3.7+)
