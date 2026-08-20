@@ -1,0 +1,128 @@
+{
+  "title": "JavaScript Basics",
+  "questions": [
+    {
+      "id": 1,
+      "domain": "Programming",
+      "question": "What keyword is used to declare a variable in JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "var"
+        },
+        {
+          "id": 2,
+          "answer": "let"
+        },
+        {
+          "id": 3,
+          "answer": "const"
+        },
+        {
+          "id": 4,
+          "answer": "all of the above",
+          "explanation": "All three keywords can be used to declare variables, though they have different scopes and behaviors."
+        }
+      ],
+      "correctAnswerIds": [4]
+    },
+    {
+      "id": 2,
+      "domain": "Programming",
+      "question": "Which data type is NOT primitive in JavaScript?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "string"
+        },
+        {
+          "id": 2,
+          "answer": "number"
+        },
+        {
+          "id": 3,
+          "answer": "object"
+        },
+        {
+          "id": 4,
+          "answer": "boolean"
+        }
+      ],
+      "correctAnswerIds": [3]
+    },
+    {
+      "id": 3,
+      "domain": "Programming",
+      "question": "What will console.log(typeof null) output?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "null"
+        },
+        {
+          "id": 2,
+          "answer": "undefined"
+        },
+        {
+          "id": 3,
+          "answer": "object",
+          "explanation": "This is a known quirk in JavaScript - typeof null returns 'object' due to a legacy bug."
+        },
+        {
+          "id": 4,
+          "answer": "error"
+        }
+      ],
+      "correctAnswerIds": [3]
+    },
+    {
+      "id": 4,
+      "domain": "Programming",
+      "question": "Select all truthy values in JavaScript:",
+      "options": [
+        {
+          "id": 1,
+          "answer": "0"
+        },
+        {
+          "id": 2,
+          "answer": "\"\""
+        },
+        {
+          "id": 3,
+          "answer": "[]",
+          "explanation": "Empty arrays are truthy in JavaScript, while 0, empty strings, and null are falsy."
+        },
+        {
+          "id": 4,
+          "answer": "null"
+        }
+      ],
+      "correctAnswerIds": [3]
+    },
+    {
+      "id": 5,
+      "domain": "Programming",
+      "question": "Which methods can add elements to an array?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "push()"
+        },
+        {
+          "id": 2,
+          "answer": "pop()"
+        },
+        {
+          "id": 3,
+          "answer": "shift()"
+        },
+        {
+          "id": 4,
+          "answer": "unshift()"
+        }
+      ],
+      "correctAnswerIds": [1, 4]
+    }
+  ]
+}

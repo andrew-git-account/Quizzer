@@ -11,14 +11,14 @@ class QuizOption:
     """Represents a single answer option in a question."""
     id: int
     answer: str
-    explanation: str
+    explanation: str = ""
 
     @classmethod
     def from_dict(cls, data: dict) -> 'QuizOption':
         return cls(
             id=data['id'],
             answer=data['answer'],
-            explanation=data['explanation']
+            explanation=data.get('explanation', "")
         )
 
 
