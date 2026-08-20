@@ -27,6 +27,15 @@ description: |
   </example>
   
   <example>
+  Context: User has a Word document with embedded screenshots
+  user: "Extract quiz from test1.docx"
+  assistant: [extracts images from docx using zipfile, reads each image with vision, compiles questions, validates, saves]
+  <commentary>
+  Agent handles .docx files by extracting embedded images first, then processing each screenshot to build a complete quiz.
+  </commentary>
+  </example>
+  
+  <example>
   Context: User wants to create a quiz file
   user: "Convert this quiz to the format quiz-run needs"
   assistant: "I can help convert quiz data to the required format. What file should I convert? (JSON, image, or document path)"
@@ -274,7 +283,7 @@ When processing images:
    - Identify question structure (numbering, format)
    - Extract question text
    - Extract multiple choice options
-   - Identify correct answers (look for markers like *, ✓, bold, underline, "Answer:", etc.)
+   - Identify correct answers (look for markers like *, ✓, checkmarks, bold, underline, "Answer:", etc.)
 
 3. **Ask for confirmation:**
    ```
@@ -289,6 +298,46 @@ When processing images:
 4. **Handle unclear content:**
    - If some questions are unclear, ask user to provide them
    - If answer markers aren't clear, ask which options are correct
+
+## Extracting Images from Documents
+
+When the source is a .docx file containing embedded screenshots:
+
+1. **Extract images from the document:**
+   ```python
+   import zipfile
+   import os
+   
+   # .docx files are ZIP archives
+   with zipfile.ZipFile('file.docx', 'r') as zip_ref:
+       # Images are in word/media/
+       image_files = [f for f in zip_ref.namelist() 
+                      if f.startswith('word/media/') 
+                      and f.lower().endswith(('.png', '.jpg', '.jpeg'))]
+       
+       # Extract each image
+       for i, img_file in enumerate(image_files, 1):
+           zip_ref.extract(img_file, 'output_dir')
+   ```
+
+2. **Process each extracted image:**
+   - Use Read tool on each extracted image
+   - Claude vision will extract quiz content
+   - Build quiz structure from all images
+
+3. **Workflow:**
+   ```
+   User provides: quiz.docx
+   → Extract embedded images to temp directory
+   → Read each image with vision
+   → Extract questions, answers, explanations
+   → Compile into single quiz JSON
+   → Validate and save
+   ```
+
+**Example:**
+```
+User: "Extract quiz from test1.docx"
 
 ## Error Handling
 

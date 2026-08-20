@@ -1,0 +1,155 @@
+{
+  "title": "Agent Development Kit (ADK) Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "domain": "Spec-Driven Development",
+      "question": "What is a direct consequence of adopting Spec-Driven Development (SDD) when creating enterprise-grade agents?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "Developers must spend more time holding complex API references, such as the full ADK graph routing, in their active memory."
+        },
+        {
+          "id": 2,
+          "answer": "Evaluation datasets must be written manually using strict string-matching assertions rather than LLM-as-judge metrics."
+        },
+        {
+          "id": 3,
+          "answer": "The generated codebase becomes the derivative of the SDD, which means it becomes easier to regenerate if the specification is solid.",
+          "explanation": "Correct! Because the high-quality specification acts as the source of truth, you can recreate or restructure the entire codebase at any time without losing your core design intent."
+        },
+        {
+          "id": 4,
+          "answer": "The coding agent becomes restricted to using older 1.x SequentialAgent composition models rather than graph structures."
+        }
+      ],
+      "correctAnswerIds": [3]
+    },
+    {
+      "id": 2,
+      "domain": "Agent Evaluation",
+      "question": "When evaluating agent quality using the toolchain, what advantage does an LLM-as-judge metric have over traditional code unit tests?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "It provides a quantitative score that guarantees the local development backend is listening directly on the host operating system."
+        },
+        {
+          "id": 2,
+          "answer": "It automatically tightens the configuration definitions in the project's layout files to prevent server crashes."
+        },
+        {
+          "id": 3,
+          "answer": "It completely eliminates the requirement to execute both generation and grading steps when validating code changes."
+        },
+        {
+          "id": 4,
+          "answer": "It can qualitatively grade the entire execution trace and trajectory of an agent rather than relying on brittle string-matching assertions.",
+          "explanation": "Correct! Because agents deal with probabilistic behavior and qualitative judgment, an LLM-as-judge can assess whether the overall behavior and routing outcomes matched your policy intent."
+        }
+      ],
+      "correctAnswerIds": [4]
+    },
+    {
+      "id": 3,
+      "domain": "Authentication",
+      "question": "How do the available authentication paths for the development toolchain impact the capabilities of an ambient agent during local execution?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "Google Cloud credentials provide access to Vertex AI services for session state management, whereas a Gemini API key serves as a fallback path.",
+          "explanation": "Correct! Google Cloud credentials unlock advanced features like the Vertex AI Session Service for human-in-the-loop state management across sessions, while a Gemini API key acts as a quick starting alternative."
+        },
+        {
+          "id": 2,
+          "answer": "A Gemini API key is required to build graph workflows, whereas Google Cloud credentials are restricted to standalone terminal checks."
+        },
+        {
+          "id": 3,
+          "answer": "Exporting a Gemini API key automatically pins the toolchain binary version across all team members in the pyproject.toml file."
+        },
+        {
+          "id": 4,
+          "answer": "Using Google Cloud credentials forces the environment setup command to install the seven skill files globally, while an API key installs them locally."
+        }
+      ],
+      "correctAnswerIds": [1]
+    },
+    {
+      "id": 4,
+      "domain": "ADK Architecture",
+      "question": "When leveraging the Agent Development Kit (ADK) 2.0 API to build an agent, how is the architecture fundamentally structured to separate deterministic logic from qualitative judgment?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "As an isolated set of unit tests that utilize standard regex definitions to enforce security checkpoints across multiple chat applications."
+        },
+        {
+          "id": 2,
+          "answer": "As a conversational interface that relies entirely on an interactive playground to route user messages asynchronously."
+        },
+        {
+          "id": 3,
+          "answer": "As a sequential prompt chain where the language model dynamically evaluates numerical conditions and routing logic on every turn."
+        },
+        {
+          "id": 4,
+          "answer": "As a graph workflow where function nodes handle deterministic business rules in code, and specific model-backed nodes are reserved for interpretation.",
+          "explanation": "That's correct. ADK 2.0 uses a graph Workflow API where straightforward rules (like a dollar threshold) stay reliably in Python code, ensuring language models are only queried when genuine interpretation is required."
+        }
+      ],
+      "correctAnswerIds": [4]
+    },
+    {
+      "id": 5,
+      "domain": "Event-Driven Architecture",
+      "question": "What capability does an ADK trigger endpoint provide when transforming a graph workflow into an event-driven ambient service?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "It allows an agent to bypass the human-in-the-loop pause step whenever a prompt-injection attempt is flagged."
+        },
+        {
+          "id": 2,
+          "answer": "It automatically handles the incoming message plumbing, decodes the payload, and instantiates a routed, stateful run.",
+          "explanation": "Correct! Trigger endpoints eliminate the need to hand-write server integration logic by automatically receiving external events (like Pub/Sub messages) and mapping them into standard agent runs."
+        },
+        {
+          "id": 3,
+          "answer": "It forces the judge model to use standard string-matching assertions rather than qualitative scoring rubrics."
+        },
+        {
+          "id": 4,
+          "answer": "It enables the interactive local developer interface to hot-reload and display execution traces inside a chat window."
+        }
+      ],
+      "correctAnswerIds": [2]
+    },
+    {
+      "id": 6,
+      "domain": "Session Management",
+      "question": "Why is it highly recommended to apply the session-start pattern at the beginning of every interaction with your development platform?",
+      "options": [
+        {
+          "id": 1,
+          "answer": "It triggers a global download that automatically re-installs and overwrites the active environment dependencies using uv sync."
+        },
+        {
+          "id": 2,
+          "answer": "It anchors the conversation on the correct API surface, preventing the agent from losing context and defaulting to deprecated 1.x composition models.",
+          "explanation": "Correct! Long conversations can dilute context window details. Running a session-start prompt ensures the agent explicitly loads the correct 2.0 graph references from the start."
+        },
+        {
+          "id": 3,
+          "answer": "It bypasses the bounded workspace restrictions so the agent can modify configuration files outside the project directory without permission."
+        },
+        {
+          "id": 4,
+          "answer": "It converts the agent's internal operating model from a single-turn architecture to an interactive web application."
+        }
+      ],
+      "correctAnswerIds": [2]
+    }
+  ]
+}
